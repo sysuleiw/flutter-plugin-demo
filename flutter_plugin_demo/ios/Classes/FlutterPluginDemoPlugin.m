@@ -8,11 +8,8 @@
             binaryMessenger:[registrar messenger]];
   FlutterPluginDemoPlugin* instance = [[FlutterPluginDemoPlugin alloc] init];
   [registrar addMethodCallDelegate:instance channel:channel];
-    
 
-    TestUIViewFactory* webviewFactory =
-    [[TestUIViewFactory alloc] initWithMessenger:registrar.messenger];
-    [registrar registerViewFactory:webviewFactory withId:@"plugins.flutter.io/testUIView"];
+    [self registerCustomView:registrar];
 }
 
 - (void)handleMethodCall:(FlutterMethodCall*)call result:(FlutterResult)result {
@@ -23,4 +20,10 @@
   }
 }
 
++ (void)registerCustomView:(NSObject<FlutterPluginRegistrar>*)registrar
+{
+    TestUIViewFactory* webviewFactory =
+    [[TestUIViewFactory alloc] initWithMessenger:registrar.messenger];
+    [registrar registerViewFactory:webviewFactory withId:@"plugins.flutter.io/testUIView"];
+}
 @end

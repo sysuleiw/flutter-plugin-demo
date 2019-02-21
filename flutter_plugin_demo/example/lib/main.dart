@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
             Text('Running on: $_platformVersion\n'),
             Container(
               child: TestUIView(
-                labelText: '测试组件啦',
+                labelText: '测试Native组件',
               ),
               width: 300,
               height: 100,

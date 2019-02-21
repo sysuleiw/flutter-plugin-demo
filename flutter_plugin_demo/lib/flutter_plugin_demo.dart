@@ -23,26 +23,27 @@ class TestUIView extends StatelessWidget {
   Widget build(BuildContext context) {
     return UiKitView(
       viewType: 'plugins.flutter.io/testUIView',
-      creationParams: _CreationParams.fromWidget(this).toMap(),
+//      creationParams: _CreationParams.fromWidget(this).toMap(),
+      creationParams: <String, dynamic>{'labelText': labelText},
       creationParamsCodec: const StandardMessageCodec(),
     );
   }
 }
 
-class _CreationParams {
-  _CreationParams({this.labelText});
-
-  static _CreationParams fromWidget(TestUIView widget) {
-    return _CreationParams(
-      labelText: widget.labelText,
-    );
-  }
-
-  final String labelText;
-
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'labelText': labelText,
-    };
-  }
-}
+//class _CreationParams {
+//  _CreationParams({this.labelText});
+//
+//  static _CreationParams fromWidget(TestUIView widget) {
+//    return _CreationParams(
+//      labelText: widget.labelText,
+//    );
+//  }
+//
+//  final String labelText;
+//
+//  Map<String, dynamic> toMap() {
+//    return <String, dynamic>{
+//      'labelText': labelText,
+//    };
+//  }
+//}
